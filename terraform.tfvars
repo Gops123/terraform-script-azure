@@ -1,0 +1,8 @@
+location = "West US"
+protocol     = "tcp"
+type                       = "Inbound"
+source_address_prefix      = "100.0.0.0/32"
+source_port_range          = "*"
+destination_address_prefix = "10.0.0.0/32"
+destination_port_range     = "22"
+address_prefix = "10.1.2.0/25"
