@@ -1,6 +1,6 @@
 
 provider "azure" {
-  publish_settings = "${file("credentials.publishsettings")}"
+  publish_settings = "${file("credentials.json")}"
 }
 
 resource "azure_security_group" "web" {
@@ -8,9 +8,14 @@ resource "azure_security_group" "web" {
   location = "${var.location}"
 }
 
-resource "azure_virtual_network" "default" {
+resource "azurerm_resource_group" "test" {
+  name     = "production"
+  location = "${var.location}"
+}
+
+resource "azure_virtual_network" "test" {
   name          = "test-network"
-  address_space = ["10.1.2.0/24"]
+  address_space = ["${var.address_space}"]
   location      = "${var.location}"
 
   subnet {

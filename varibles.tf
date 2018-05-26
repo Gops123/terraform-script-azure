@@ -6,3 +6,4 @@ variable "source_address_prefix" {}
 variable "destination_port_range" {}
 variable "protocol" {}
 variable "address_prefix" {}
+variable "address_space" {}
